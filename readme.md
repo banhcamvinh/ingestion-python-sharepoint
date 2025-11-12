@@ -5,8 +5,11 @@ It supports full sync on first run and incremental sync (delta queries) on subse
 
 📦 Key Features
 Full and incremental (delta) synchronization
+
 Tracks additions, updates, and deletions
+
 Maintains SharePoint folder structure locally
+
 Uses Azure AD app credentials (no user login required)
 
 ⚙️ Requirements
@@ -16,14 +19,19 @@ Azure AD App with Sites.Read.All and Files.Read.All application permissions (adm
 
 🚀 Usage
 Install dependencies (requests library).
+
 Configure your tenant, client ID, client secret, site name, and domain.
+
 Run the script to start syncing files.
+
 On subsequent runs, only changed or new files are downloaded automatically.
 
 📁 Output
 downloaded_files/ → Local folder containing synced SharePoint files
+
 delta_data/ → Stores delta links for incremental updates
 
 🔄 Delta Sync Overview
 The script uses Microsoft Graph’s delta query API to track changes.
+
 Each run fetches only updated or new files since the last execution.
